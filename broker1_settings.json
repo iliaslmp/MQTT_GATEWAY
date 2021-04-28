@@ -1,0 +1,1 @@
+{"brokerURL":"127.0.0.1","password":"***********","protocol":0,"clientID":"1234567890","keepAlive":60,"cleanSession":true,"timeout":10,"username":"LocalBroker"}

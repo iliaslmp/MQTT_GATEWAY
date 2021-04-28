@@ -1,0 +1,51 @@
+{
+	"broker1": [
+		{	"subTopic": "sensor/+/data",
+			"pubTopic": "iliaslamprou/groups/${topic=sendor/*/data}/json",
+			"pubSettings":{
+				"qos": 0,
+				"retained" :1
+			},
+			"pubData":{
+				    "feeds": {
+				   	    "humidity": "${Humidity}",
+					    "temperature": "${Temperature}",
+					    "coolant_temp": "${CoolantTemp}",
+					    "on_off": "${OnOff}",
+					    "hi_low": "${HiLow}"
+					  }
+				}
+ 	
+		}
+	],
+	
+	"broker2": [
+		{	"subTopic": "iliaslamprou/groups/device_1/json",
+			"pubTopic": "m2mce/hvac/ce/act",
+			"pubSettings":{
+				"qos": 0,
+				"retained" :1
+			},
+			"pubData":{
+ 				    "NodeNo": "2",
+				    "OnOff": "${feeds/on-off}" 
+				   }
+
+		 	
+		},
+		{	"subTopic": "iliaslamprou/groups/device_1/json",
+			"pubTopic": "m2mce/hvac/ce/act",
+			"pubSettings":{
+				"qos": 0,
+				"retained" :1
+			},
+			"pubData":{
+ 				    "NodeNo": "2",
+				    "HiLow": "${feeds/hi-low}" 
+				   }
+
+		 	
+		}
+	]
+
+	}
